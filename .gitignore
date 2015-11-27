@@ -1,7 +1,9 @@
 Library/
 Temp/
+.vs/
 
 *.csproj
 *.sln
 *.userprefs
 *.log
+*.unityproj
