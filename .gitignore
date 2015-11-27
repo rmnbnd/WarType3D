@@ -1,2 +1,7 @@
-Library/*
+Library/
 Temp/
+
+*.csproj
+*.sln
+*.userprefs
+*.log
