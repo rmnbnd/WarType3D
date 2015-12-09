@@ -8,22 +8,20 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		enemies = GameObject.FindGameObjectsWithTag("Enemy Text");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.anyKeyDown) {
-			if (currentEnemy == null) {
-				foreach (GameObject enemy in enemies) {
-					EnemyMovements enemyObject = enemy.GetComponent<EnemyMovements>();
-					if (enemyObject.word[0].ToString() == Input.inputString) {
-						if (enemyObject.word.Length == 1) {
-							Destroy(enemy);
-						} else {
-							enemyObject.word = enemyObject.word.Substring(1, enemyObject.word.Length - 1);						
-						}
+			foreach (GameObject enemy in enemies) {
+				EnemyTextController enemyObject = enemy.GetComponent<EnemyTextController>();
+				if (enemyObject.word[0].ToString() == Input.inputString) {
+					if (enemyObject.word.Length == 1) {
+						Destroy(enemy.transform.parent.gameObject);
+					} else {
+						enemyObject.word = enemyObject.word.Substring(1, enemyObject.word.Length - 1);						
 					}
 				}
 			}
