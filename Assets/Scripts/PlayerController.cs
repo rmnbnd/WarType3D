@@ -13,9 +13,19 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			foreach (GameObject enemy in enemies) {
-				Destroy(enemy);
+
+		if (Input.anyKeyDown) {
+			if (currentEnemy == null) {
+				foreach (GameObject enemy in enemies) {
+					EnemyMovements enemyObject = enemy.GetComponent<EnemyMovements>();
+					if (enemyObject.word[0].ToString() == Input.inputString) {
+						if (enemyObject.word.Length == 1) {
+							Destroy(enemy);
+						} else {
+							enemyObject.word = enemyObject.word.Substring(1, enemyObject.word.Length - 1);						
+						}
+					}
+				}
 			}
 		}
 	}

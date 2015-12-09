@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyMovements : MonoBehaviour {
 
+	public string word = "test";
+
 	Transform player;               // Reference to the player's position.
 	NavMeshAgent nav;               // Reference to the nav mesh agent.
 	
