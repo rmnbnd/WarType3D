@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enemies = GameObject.FindGameObjectsWithTag("Enemy Text");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		enemies = GameObject.FindGameObjectsWithTag("Enemy Text");
 		if (Input.anyKeyDown) {
 			foreach (GameObject enemy in enemies) {
 				EnemyTextController enemyObject = enemy.GetComponent<EnemyTextController>();
