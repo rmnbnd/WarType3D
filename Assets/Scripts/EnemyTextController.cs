@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyTextController : MonoBehaviour {
 
-	private TextMesh textMesh;
+	public TextMesh textMesh;
 	public string word;
 	public string[] words = {"first", "second", "third", "fourth", "fifth",
 		"sixth", "seventh", "eight", "ninth", "tenth"};

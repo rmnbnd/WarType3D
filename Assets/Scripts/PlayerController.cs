@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 		bool isSelectWord = false;
 		EnemyTextController enemyObject = enemy.GetComponent<EnemyTextController>();
 		if (enemyObject.word[0].ToString() == Input.inputString) {
+			enemyObject.textMesh.color = Color.red;
 			isSelectWord = true;
 			if (enemyObject.word.Length == 1) {
 				Destroy(enemy.transform.parent.gameObject);
