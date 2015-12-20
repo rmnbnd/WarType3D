@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	private GameObject[] enemies;
 	private GameObject currentEnemy;
+	private int scoreInc = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				enemyObject.word = enemyObject.word.Substring(1, enemyObject.word.Length - 1);						
 			}
+			ScoreManager.score += scoreInc;
 		}
 		return isSelectWord;
 	}
